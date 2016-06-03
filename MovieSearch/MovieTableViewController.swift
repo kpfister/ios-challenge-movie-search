@@ -39,7 +39,7 @@ class MovieTableViewController: UITableViewController {
         return 1
     }
 
-    
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("movieCell", forIndexPath: indexPath)
         
@@ -48,7 +48,7 @@ class MovieTableViewController: UITableViewController {
 
         return cell
     }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.
