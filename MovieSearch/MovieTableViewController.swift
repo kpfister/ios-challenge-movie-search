@@ -13,17 +13,15 @@ class MovieTableViewController: UITableViewController, UISearchBarDelegate{
     var movies = [Movie]()
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        guard let searchTerm = searchBar.text else {return }
-        MovieController.fetchMovies(searchTerm, completion: { (movies) in
-            self.movies = movies
+        guard let searchTerm = searchBar.text else { return }
+        MovieController.fetchMovies(searchTerm) { (movies) in
+           self.movies = movies
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                
                 self.tableView.reloadData()
             })
-        })
+        }
     }
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
