@@ -20,7 +20,6 @@ class MovieInfoTableViewCell: UITableViewCell {
     
     
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -31,5 +30,5 @@ class MovieInfoTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }
