@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MovieInfoTableViewCell: UITableViewCell {
+class MovieInfoTableViewCell: UITableViewCell, UISearchBarDelegate {
     
     @IBOutlet weak var PosterImageView: UIImageView!
     
@@ -18,7 +18,19 @@ class MovieInfoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var movieRatingLabel: UILabel!
     
-    
+    func updateMovie(movie: Movie) {
+        movieTitleLabel.text = movie.title
+        movieOverviewLabel.text = movie.overview
+        movieRatingLabel.text = "\(movie.rating)"
+        let imageURL = "http://image.tmdb.org/t/p/w500" + "\(movie.imageEndPoint)"
+        imageController.imageForURL(imageURL, completion: { (image) in
+            if let image = image {
+                self.PosterImageView.image = image
+            }
+        })
+        
+    }
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
